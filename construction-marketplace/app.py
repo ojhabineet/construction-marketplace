@@ -1,3 +1,7 @@
+from flask import Flask, render_template, request, redirect, session
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
+import pickle
 db = SQLAlchemy(app)
 # ---------------- PROJECT MODEL ----------------
 class Project(db.Model):
@@ -115,4 +119,5 @@ def contractor_profile(id):
     return render_template("contractor_profile.html",
                            contractor=contractor,
                            ratings=ratings)
+
 
