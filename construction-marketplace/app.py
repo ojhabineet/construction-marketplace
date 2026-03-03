@@ -1,3 +1,4 @@
+db = SQLAlchemy(app)
 # ---------------- PROJECT MODEL ----------------
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -114,3 +115,4 @@ def contractor_profile(id):
     return render_template("contractor_profile.html",
                            contractor=contractor,
                            ratings=ratings)
+
