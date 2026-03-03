@@ -218,10 +218,7 @@ def contractor_profile(id):
 
 
 # ---------- AI COST ESTIMATOR ----------
-if os.path.exists("cost_model.pkl"):
-    model = pickle.load(open("cost_model.pkl", "rb"))
-else:
-    model = None
+model = None
 
 
 @app.route("/estimate", methods=["GET", "POST"])
@@ -238,3 +235,4 @@ def estimate():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
