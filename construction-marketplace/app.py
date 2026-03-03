@@ -11,6 +11,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 # ---------------- PROJECT MODEL ----------------
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(200))
+    role = db.Column(db.String(20))
+    
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200))
@@ -126,6 +133,7 @@ def contractor_profile(id):
     return render_template("contractor_profile.html",
                            contractor=contractor,
                            ratings=ratings)
+
 
 
 
