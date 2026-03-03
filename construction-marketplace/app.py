@@ -99,6 +99,8 @@ class Bid(db.Model):
 
     @app.route("/post_project", methods=["GET", "POST"])
     def post_project():
+    @app.route("/post_project", methods=["GET", "POST"])
+def post_project():
     if session.get("role") != "customer":
         return redirect("/login")
 
@@ -198,5 +200,6 @@ def estimate():
 
 if __name__ == "__main__":
     app.run()
+
 
 
